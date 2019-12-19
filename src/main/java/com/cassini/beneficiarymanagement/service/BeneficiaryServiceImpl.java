@@ -124,7 +124,7 @@ public class BeneficiaryServiceImpl implements BeneficiaryService {
 			logger.debug("addBeneficiary service method - MaximumBeneficiaryException occured");
 			throw new MaximumBeneficiaryException(Constant.MAX_BENEFICIARY);
 		}
-		if (!(account.isPresent() && account.get().getAccountNumber().equals(addBeneficiaryRequestDto.getBeneficiaryAccountNumber()))) {
+		if (!account.isPresent()) {
 			logger.debug("addBeneficiary service method - AccountNotFoundException occured");
 			throw new AccountNotFoundException(Constant.ACCOUNT_NOT_FOUND);
 		}
